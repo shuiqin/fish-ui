@@ -1,0 +1,12 @@
+{
+  "name": "fish-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "compones/Dialog/dlg.js",
+  "module": "compones/Dialog/dlg.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

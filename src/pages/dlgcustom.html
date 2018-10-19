@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="styleSheet" href="./dialogp.css"/>
+</head>
+<body>
+<button id="JcustomeDlg">点击显示弹出框</button>
+</body>
+
+<script type="text/template" id="dialogTpl">
+    <div class="dialog-container">
+        <div class="mydialog">
+            <span class="close">×</span>
+            <div class="mydialog-cont">
+                <div class="cont">你好呀 !! </div>
+            </div>
+            <div class="footer">
+                <% if(this.cancel){ %>
+                <span class="btn btn-ok-custom">确定</span>
+                <span class="btn btn-cancel-cutome">取消</span>
+                <% } else{ %>
+                <span class="btn btn-ok-cutome" style="width: 100%">确定</span>
+                <% } %>
+            </div>
+        </div>
+    </div>
+
+</script>
+
+<script src="../components/Dialog/dlg.js"></script>
+<script type="text/javascript">
+    var mydialog = new Dialog({
+        templateId:"dialogTpl",
+        confirmClassName: "btn-ok-custom",//required
+        cancelClassName:"btn-cancel-cutome", // required
+        closeClassName: "close",// required
+        bodyClassName:"mydialog-cont",// required
+        cancel: true,
+        overlayStyle:'background-color: rgba(0,0,0,.65);',
+        modal: false,
+        close:function () {
+            console.log("custome close func");
+        }
+    });
+
+    mydialog.on('confirm',function(ev){
+        console.log('you click confirm!');
+    });
+    mydialog.on('close',function(ev){
+        console.log('you click close!');
+    });
+    mydialog.on('cancel',function(ev){
+        console.log('you click cancel!');
+    });
+
+    document.getElementById('JcustomeDlg').onclick = function(){
+        mydialog.show();
+    }
+</script>
+</html>
