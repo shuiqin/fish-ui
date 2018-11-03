@@ -2,11 +2,39 @@
   "name": "fish-ui",
   "version": "1.0.0",
   "description": "",
-  "main": "compones/Dialog/dlg.js",
-  "module": "compones/Dialog/dlg.js",
+  "main": "index.js",
+  "keywords": [
+    "componets",
+    "js"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shuiqin/fish-ui.git"
+  },
   "author": "",
-  "license": "ISC"
+  "maintainers": [
+    {
+      "name":"fish",
+      "email": "sei_xsq@126.com"
+    }
+  ],
+  "contributors": [
+    {
+      "name":"fish",
+      "email": "sei_xsq@126.com"
+    }
+  ],
+  "dependencies":{
+    
+  },
+  "devDependencies": {
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shuiqin/fish-ui/issues"
+  },
+  "homepage": "https://github.com/shuiqin/fish-ui#readme"
 }
