@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script
+        src="http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+<script src="http://mockjs.com/dist/mock.js"></script>
+<script>
+
+   var test = {
+      'aa.json':{
+        response: {
+            "code":200,
+            "body":{
+                "a":1
+            }
+        }
+      },
+
+      '/aab.json*/':{
+        response: {
+            "code":200,
+            "body":{
+                "bb":1
+            }
+        }
+      }
+
+   }
+   /* Mock.mock(/\.json/, {
+    'list|1-10': [{
+        'id|+1': 1,
+        'email': '@EMAIL'
+    }]
+    })*/
+    for (let key in test) {
+        Mock.mock(key, test[key])
+    }
+
+    $.ajax({
+        url: 'aa.json',
+        dataType: 'json'
+    }).done(function(data, status, jqXHR){
+        $('<pre>').text(JSON.stringify(data, null, 4))
+            .appendTo('body')
+    })
+
+    $.ajax({
+        url: 'aab.json?djs=1',
+        dataType: 'json'
+    }).done(function(data, status, jqXHR){
+        $('<pre>').text(JSON.stringify(data, null, 4))
+            .appendTo('body')
+    })
+</script>
+</html>

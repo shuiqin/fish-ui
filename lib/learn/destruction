@@ -1,0 +1,5 @@
+function setCookie(name, value, {secure, path, domain, expires}){ /*解构无默认值必须传參*/
+    console.log(value);
+}
+
+setCookie('type', 'js');
